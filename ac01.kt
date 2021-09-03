@@ -27,6 +27,7 @@ fun main() {
     //println(ex11(1,800))
 
     println(limite(25))
+    println(array())
 
 
 }
@@ -143,6 +144,48 @@ fun limite(limite: Int) :Unit {
         }
     }
 }
+
+fun array() {
+    println("Ex 13 : ")
+var vetor1 = IntArray(10){10*(it+1)}
+for ((indice, valor) in vetor1.withIndex()){
+    println("Elemento [$indice] é $valor ,")
+
+}
+}
+
+fun ex14(): Unit  { 
+    println("Esqueci de fazer essa")
+}
+
+/*
+Ex 15 :
+
+O código acima inicia um array com 5 posições
+
+o metodo get() retorna o elemento no indice especificado
+o metodo set() insere um elemento passado como parametrono indice especificado
+
+Ao printar o array, o java retorna o código hash do mesmo,porém ao importar a classe java.util.Arrays podemos converter os elementos para string e realizar o print
+
+O metodo plus() adiciona um elemento ao fim do array
+
+o metodo sliceArray() retorna um array delimitado pelos parametros passados 
+
+Os metodos first e last retornam respectivamente o primeiro e ultimo elemento do array, o metodo indexOf retorna o elemento no indice passado como parametro
+
+
+/*
+
+
+/*
+Ex 16:
+- Kotlin Unit é geralmente utilizado quando a função não retorna nenhum valor significante ou realiza alguma outra atividade sem retorno 
+- Operadores ternários são uma forma mais simples de realizar operações ou expressões
+ - Modularização é a divisão de objetos em unidades lógicas independentes, facilitando a manutenção e o reaproveitamento dos códigos
+
+/*
+
 
 
 
