@@ -1,51 +1,43 @@
+
 import java.math.BigDecimal
 
-// D E U S  É  B O M
 
 fun main() {
-    println(idade(25))
     println(calculaIdade(2021, 2001))
-    
+
     println(data("02","09","2021"))
 
-    println(troca(2,4))
+    //println(troca(2,4))
 
-    println(poupanca(1000.00,1))
+    println(poupanca(1000.00))
 
-    println(aumento_salario(2000.00,20))
-    
+
     println(verificar(1005, 98, 125))
-    
+
     println(diferenca(120,140))
 
-    println(diferenca(140,120))
-    
+
+
     println(media(7.0, 8.0, 6.0))
-    
+
     println(case_salario(1000.00,1))
     //println(case_salario(1000.00,2))
     //println(case_salario(1000.00,3))
     //println(case_salario(1000.00,4))
 
-    println(quadrado_pares(40,200))
+    //println(quadrado_pares(40,200))
 
-    //println(ex11(1,800))
+
     println(exercicio11())
-    
-    println(limite(25))
-    println(array())
 
+    //println(limite(25))
+    //println(array())
+    println(nulltesting(null,null,null,null))
 
 }
 
 //1
-fun idade(atual: Int): Int {
-    println("Ex 1: ")
-    return atual + 25
-}
-/*esse daqui precisa mostrar sua idade atual, fazendo a conta
-do seu ano de nascimento, menos sua idade e ai sim depois
-mostrar quantos anos terá daqui 25 anos*/
+
 fun calculaIdade(atual:Int, nascimento:Int){
     var valorIdade: Int = atual - nascimento
     var valorMais25: Int = valorIdade + 25
@@ -55,7 +47,6 @@ fun calculaIdade(atual:Int, nascimento:Int){
 //2
 fun data(dia:String, mes:String , ano: String): String {
     println("Ex 2: ")
-    println("Dia : $dia , Mês : $mes , Ano $ano" )
     return ("$dia / $mes / $ano")
 }
 
@@ -73,12 +64,7 @@ fun troca(x: Int, y : Int){
 }
 
 //4
-fun poupanca(deposito:Double, meses : Int) : Double{
-    println("Ex 4:")
-    var rendimento = (deposito * 1.13) * meses
-    return deposito + rendimento
-}
-/* aqui fiz apenas quanto rendeu e não quanto ficaria no total */
+
 fun poupanca(deposito: Double){
     var rende: Double = (deposito / 100 * 1.3)
     println("Rendeu após 1 mês $rende reais")
@@ -99,7 +85,7 @@ fun verificar(a:Int, b:Int, c:Int){
         if(b > 1000 || b < 100){
             println(b)
             if(c > 1000 || c < 100)
-            println(c)
+                println(c)
         }
     }
 }
@@ -157,26 +143,7 @@ fun quadrado_pares(inicio: Int,limite:Int): Unit {
         }
     }
 }
-//11  esse tá dando ruim
-/*
-fun ex11(inicio: Int, limite: Int): Unit {
-        println("Ex 11 :")
-        var valor: Int
-        var i = Int
-        var ac = Long
-        for (valor in inicio..limite) {
-            if (valor % 2 == 0) {
-                ac = ac + valor
-            } else {
-                i++
-            }
-            println("Soma dos pares = $ac")
-            println("Quantidade de impares = $i")
-
-        }
-    }
-
-*/
+//11
 fun exercicio11(){
     var pares: Int = 0
     var impares: Int = 0
@@ -205,30 +172,46 @@ fun limite(limite: Int) :Unit {
 //13
 fun array() {
     println("Ex 13 : ")
-var vetor1 = IntArray(10){10*(it+1)}
-for ((indice, valor) in vetor1.withIndex()){
-    println("Elemento [$indice] é $valor ,")
+    val vetor1 = IntArray(10){10*(it+1)}
+    for ((indice, valor) in vetor1.withIndex()){
+        println("Elemento [$indice] é $valor ,")
 
-}
+    }
 }
 //14
-fun ex14(): Unit  { 
-    println("Esqueci de fazer essa")
+fun nulltesting(nullableVal1: Int?, nullableVal2: String? , nullableVal3:Int?, nullableVal4: String?) {
+
+    println(nullableVal1?.plus(1)) // safe call
+
+
+
+    if (nullableVal2 != null) {
+        println(nullableVal2)
+    } else {
+        var nullableVal2 = "Tratar Null com if"
+        println(nullableVal2)
+         }
+
+    println(nullableVal3) //Null safety no parametro
+
+    println(nullableVal4?.length ?: "Elvis operator para tratar null") //Elvis operator
+
 }
+
 
 /*
 Ex 15 :
 
-O código acima inicia um array com 5 posições
+O código  inicia um array com 5 posições
 
 o metodo get() retorna o elemento no indice especificado
-o metodo set() insere um elemento passado como parametrono indice especificado
+o metodo set() insere um elemento passado como parametro no indice especificado
 
 Ao printar o array, o java retorna o código hash do mesmo,porém ao importar a classe java.util.Arrays podemos converter os elementos para string e realizar o print
 
 O metodo plus() adiciona um elemento ao fim do array
 
-o metodo sliceArray() retorna um array delimitado pelos parametros passados 
+o metodo sliceArray() retorna um array delimitado pelos parametros passados
 
 Os metodos first e last retornam respectivamente o primeiro e ultimo elemento do array, o metodo indexOf retorna o elemento no indice passado como parametro
 
@@ -237,16 +220,22 @@ Os metodos first e last retornam respectivamente o primeiro e ultimo elemento do
 
 /*
 Ex 16:
-- Kotlin Unit é geralmente utilizado quando a função não retorna nenhum valor significante ou realiza alguma outra atividade sem retorno 
-- Operadores ternários são uma forma mais simples de realizar operações ou expressões
+- Kotlin Unit é geralmente utilizado quando a função não retorna nenhum valor significante ou realiza alguma outra atividade sem retorno
+
+- Operadores ternários são uma forma mais simples de realizar operações ou expressões. Kotlin não possui operadores ternários tradicionais
+
 - Modularização é a divisão de objetos em unidades lógicas independentes, facilitando a manutenção e o reaproveitamento dos códigos
 
 - Formas de passagem de parâmetros em Kotlin: pode se ter os argumentos padrões, para que evite a sobrecarga de métodos; tem tambem os argumentos nomeados, que é para quando chamamos a função e usamos o nome do parametro para isso, isso possibilita a passagem de parametros em qualquer ordem
+
 - Operações seguras: para que uma variável ou função possa receber nulo, tem que ser identificado antes, caso contrário o código dará erro
+
+- Kotlin possui tipagem estática, onde o tipo de dado é declarado na variável ou dinâmica por inferência  onde o primeiro valor declarado define o tipo.
+  Kotlin também não permite que um tipo de dado seja alterado no contexto de execução
+
+
 
 */
 
 
 
-
-// O  T E M P O  T O D O
