@@ -9,6 +9,7 @@ Gustavo de Moraes Silva - 1905338
 */
 
 fun main() {
+    /*
     println(calculaIdade(2021, 2001))
 
     println(data("02","09","2021"))
@@ -39,6 +40,7 @@ fun main() {
     //println(limite(25))
     //println(array())
     println(nulltesting(null,null,null,null))
+    */
 
 }
 
