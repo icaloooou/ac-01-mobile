@@ -9,7 +9,6 @@ Gustavo de Moraes Silva - 1905338
 */
 
 fun main() {
-    /*
     println(calculaIdade(2021, 2001))
 
     println(data("02","09","2021"))
@@ -40,7 +39,6 @@ fun main() {
     //println(limite(25))
     //println(array())
     println(nulltesting(null,null,null,null))
-    */
 
 }
 
@@ -198,7 +196,7 @@ fun nulltesting(nullableVal1: Int?, nullableVal2: String? , nullableVal3:Int?, n
     } else {
         var nullableVal2 = "Tratar Null com if"
         println(nullableVal2)
-         }
+    }
 
     println(nullableVal3) //Null safety no parametro
 
